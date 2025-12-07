@@ -24,7 +24,7 @@ https.get(url, (response) => {
         const rates = JSON.parse(data).conversion_rates;
         
         rl.question("Enter the amount in USD: ", (amount) => {
-            rl.question("Enter the target currency (e.g. INR, EUR, YEN etc.):", (currency) => {
+            rl.question("Enter the target currency (e.g. INR, EUR etc.):", (currency) => {
                 const rate = rates[currency.toUpperCase()];
                 if(rate){
                     console.log(`${amount} is equal to ${convertCurrency(amount, rate)} ${currency}`);
